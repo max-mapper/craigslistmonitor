@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Museo 700";
+  src: url('Museo700-Regular.otf') format("opentype"); }
+
+span {
+  font-family: Georgia,"Times New Roman",Times,serif;
+  line-height: 30px;
+  padding: 0px 0px 0px 5px; }
+
+#content {
+  width: 900px;
+  margin: 0 auto; }
+
+#header {
+  width: 400px;
+  margin: 0 auto;
+  background-color: salmon;
+  height: 55px;
+  border: 1px solid #3c3809;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px; }
+
+#instructions p {
+  width: 400px;
+  margin: 10px auto;
+  padding: 0px;
+  color: #959595;
+  font-family: Georgia,"Times New Roman",Times,serif; }
+
+#loading {
+  display: none;
+  width: 400px;
+  margin: 10px auto; }
+  #loading span, #loading img {
+    float: left; }
+
+#subscriptions {
+  display: none;
+  width: 400px;
+  margin: 10px auto;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  background-color: #eee;
+  color: black;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px; }
+
+#messages {
+  display: none;
+  width: 400px;
+  height: 95px;
+  margin: 10px auto;
+  font-family: Georgia,"Times New Roman",Times,serif;
+  color: black;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px; }
+
+.success {
+  background-color: #65B040; }
+
+.fail {
+  background-color: #E67B58; }
+
+.form {
+  margin: 0 auto;
+  width: 400px; }
+  .form .text {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 0px;
+    margin: 5px 0px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+    border: 1px solid #ddd;
+    outline: 0; }
+  .form .button {
+    font-weight: bold;
+    padding: 5px 0px;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #bbb;
+    text-shadow: 0 1px 0 #fff;
+    background-color: #ded;
+    margin: 5px 0px; }
+
+h1 {
+  width: 400px;
+  -x-system-font: none;
+  text-align: center;
+  color: #fff;
+  font-family: "Museo 700", Helvetica,Arial,sans-serif;
+  font-size: 40px;
+  font-size-adjust: none;
+  font-stretch: normal;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 45px;
+  text-shadow: 0 5px 0 #3c3809;
+  margin: 0px 0px 0px 5px; }

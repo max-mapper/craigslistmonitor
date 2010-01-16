@@ -1,0 +1,3 @@
+This will scrape craigslist and email you when a new posting contains one of your search terms.
+
+INSTALLATION: Install required gems (see: config.ru) and run server using 'unicorn config.ru'

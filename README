@@ -1,4 +1,4 @@
-This will scrape craigslist and show you just the images from within posts. Currently portland, or for sale is hard coded in, although any craigslist url will work.
+This will allow you (or anyone) to enter an email and any number of search terms and be notified by email whenever a new posting containing any of your terms gets posted to craigslist.
 
 INSTALLATION: Install required gems (see: config.ru) and run web interface using 'unicorn config.ru'
 

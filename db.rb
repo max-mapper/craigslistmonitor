@@ -1,7 +1,7 @@
 require 'redis'
 
 class RedisAdapter
-  def initialize(db=1)
+  def initialize(db=0)
     @r = Redis.new :db => db
   end
   
@@ -28,7 +28,7 @@ class RedisAdapter
   end
   
   def store_email(email)
-    @r.push_tail("craigslist:allemails", email)
+    @r.push_tail("craigslist:allemails", email) if @r.list_range("craigslist:allemails").index {|i| i == email}
   end
   
   def create_subscription(email, term)
@@ -52,5 +52,35 @@ class RedisAdapter
     @r.llen(list_for(email)).times do |i|
       @r.lrem(list_for(email), i, term) if @r.lindex(list_for(email), i) == term
     end 
+  end
+  
+  def newest_listing
+    @r["craigslist:newest_listing"]
+  end
+  
+  def newest_listing=(listing)
+    @r["craigslist:newest_listing"] = listing
+  end
+  
+  def queue_job(id, data)
+    @r.sadd("craigslist:jobs", id)
+    @r["craigslist:#{id}"] = data
+  end
+  
+  def get_job
+    @r.srandmember("craigslist:jobs")
+  end
+  
+  def jobs_available?
+    @r.scard("craigslist:jobs") > 0
+  end
+  
+  def data_for(id)
+    @r["craigslist:#{id}"]
+  end
+  
+  def finish(id)
+    @r.srem("craigslist:jobs", id)
+    @r.expire("craigslist:#{id}", 1)
   end
 end

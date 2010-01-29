@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %script{ :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js" }
+    %script{ :src => "http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" }
     %script{ :src => "application.js" }
     %link{ :rel=>"stylesheet", :href => "style.css", :type => "text/css", :media => "all" }
   %body
@@ -24,3 +24,6 @@
       #messages
         %h1
       #subscriptions
+      %form.hidden_form{ :method => "POST" }
+        %input.text.hidden_email{ :name => "email", :size => "30", :type => "text"}
+        %input.text.hidden_term{ :name => "term", :size => "30", :type => "text"}

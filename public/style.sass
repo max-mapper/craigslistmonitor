@@ -32,7 +32,7 @@ span
   display: none
   width: 400px
   margin: 10px auto
-  span, img
+  img
     float: left
     
 #subscriptions
@@ -44,6 +44,16 @@ span
   color: black
   -moz-border-radius: 3px
   -webkit-border-radius: 3px
+  li
+    width: 100%
+    font-size: 14px
+    padding: 5px 0px
+    img
+      float: right
+      padding: 0px 5px 0px 0px
+
+.subscription_remove
+  line-height: 16px
 
 #messages
   display: none
@@ -61,6 +71,9 @@ span
 .fail
   background-color: #E67B58
   
+.hidden_form
+  display: none
+  
 .form
   margin: 0 auto
   width: 400px
@@ -76,7 +89,7 @@ span
     outline: 0
   .button
     font-weight: bold
-    padding: 5px 0px
+    padding: 5px 2px
     cursor: pointer
     -moz-border-radius: 5px
     -webkit-border-radius: 5px

@@ -12,6 +12,17 @@ post '/subscribe' do
     @db.create_subscription(params[:email], params[:term]) 
     status = {:message => "Subscription successful", :success => "success"}
   else
+    status = {:message => "Invalid email or term. Try again"}
+  end
+  status.to_json
+end
+
+post '/destroy' do
+  content_type :json
+  if params[:email] && params[:term]
+    @db.destroy_subscription(params[:email], params[:term]) 
+    status = {:message => "Subscription deleted", :success => "success"}
+  else
     status = {:message => "Error subscribing. Please try again"}
   end
   status.to_json

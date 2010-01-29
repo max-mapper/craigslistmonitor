@@ -1,3 +1,9 @@
-This will scrape craigslist and email you when a new posting contains one of your search terms.
+This will scrape craigslist and show you just the images from within posts. Currently portland, or for sale is hard coded in, although any craigslist url will work.
 
-INSTALLATION: Install required gems (see: config.ru) and run server using 'unicorn config.ru'
+INSTALLATION: Install required gems (see: config.ru) and run web interface using 'unicorn config.ru'
+
+install and run redis-server as a daemon
+
+cron up queuer and mailer. I have mine set to run using lockrun every 5 minutes
+
+queuer will place mail 'jobs' in to redis, mailer will check redis for pending jobs and send the jobs as emails

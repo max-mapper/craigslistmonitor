@@ -41,7 +41,7 @@ class CraigslistFetcher
       @db.all_subscriptions.each do |subscriptions|
         email = subscriptions[0]
         subscriptions[1].each do |index, subscription|
-          if listing.to_s =~ /#{Regexp.quote(subscription)}/i
+          if listing.inner_text =~ /#{Regexp.quote(subscription)}/i
             @db.queue_job(href, Marshal.dump([href, email, subscription]))
           end
         end
